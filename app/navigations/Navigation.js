@@ -1,6 +1,6 @@
 import React from 'react'
 import {NavigationContainer} from '@react-navigation/native'
-import {createBottomTabNavigator} from "@react-navigation/bottom-tabs"
+import {createBottomTabNavigator} from "@react-navigation/bottom-tabs" //aqui se importe el bottomtab(botones de abajo)
 import {Icon} from "react-native-elements";
 //import de Navigatios
 import LocationStack from "./LocationStack"
@@ -13,6 +13,7 @@ import TopLocationStack from './TopLocationStack'
 const Tab = createBottomTabNavigator()
 
 export default function Navigation(){
+    //NavigationContainer es el contorno de todos los botones de abajo,el tabNavigator es el gupo de botones, tos Tab.Screen son los elemento(botones o apartados) del bottonTab
     return(
         <NavigationContainer>
             <Tab.Navigator initialRouteName="locations"
