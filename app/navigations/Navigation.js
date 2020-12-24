@@ -13,7 +13,7 @@ import TopLocationStack from './TopLocationStack'
 const Tab = createBottomTabNavigator()
 
 export default function Navigation(){
-    //NavigationContainer es el contorno de todos los botones de abajo,el tabNavigator es el gupo de botones, tos Tab.Screen son los elemento(botones o apartados) del bottonTab
+    //NavigationContainer es el contorno de todos los botones de abajo,el tabNavigator es el gupo de botones, los Tab.Screen son los elemento(botones o apartados) del bottonTab
     return(
         <NavigationContainer>
             <Tab.Navigator initialRouteName="locations"
@@ -28,7 +28,7 @@ export default function Navigation(){
                 <Tab.Screen name="favorites" component={FavoritesStack} options={{ title:"Favoritos"}}></Tab.Screen>
                 <Tab.Screen name="search" component={SearchStack} options={{ title:"Buscador"}}></Tab.Screen>
                 <Tab.Screen name="account" component={AccountStack} options={{ title:"Cuenta"}} />
-                <Tab.Screen name="topLocations" component={TopLocationStack} options={{ title:"Top Locaciones"}}/>
+                <Tab.Screen name="topLocations" component={TopLocationStack} options={{ title:"Top Locaciones "}}/>
             </Tab.Navigator>
         </NavigationContainer>
     )
@@ -38,7 +38,7 @@ function screenOptions(route, color){
     let iconName
     switch (route.name) {
         case "locations":
-            iconName="compass-online"
+            iconName="map-marker"
             break;
         case "account":
             iconName="home-outline"
@@ -52,9 +52,6 @@ function screenOptions(route, color){
         case "search":
             iconName="magnify"
             break
-
-        default:
-            break;
     }
     return(
         <Icon type="material-community" name={iconName} size={22} color={color}/>
